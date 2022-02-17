@@ -79,9 +79,9 @@ Make sure you check the documentation before creting anything custom.
             }
         }
 
-        .btn {
+        /* .btn {
             animation: changeColor 2s;
-        }
+        } */
 
         @keyframes changeColor {
             from {background-color: aqua;}
@@ -165,19 +165,25 @@ Make sure you check the documentation before creting anything custom.
                     <th scope="row">1</th>
                     <td>Mozart</td>
                     <td>7:35</td>
-    
+                    <td>
+                        <div onclick="deleteBtn(this)" class="btn btn-danger">DELETE</div>
+                    </td>
                 </tr>
                 <tr>
                     <th scope="row">2</th>
                     <td>Mozart</td>
                     <td>5:40</td>
-    
+                    <td>
+                        <div onclick="deleteBtn(this)" class="btn btn-danger">DELETE</div>
+                    </td>
                 </tr>
                 <tr>
                     <th scope="row">3</th>
                     <td>Mozart</td>
                     <td>9:18</td>
-    
+                    <td>
+                        <div onclick="deleteBtn(this)" class="btn btn-danger">DELETE</div>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -246,9 +252,13 @@ Make sure you check the documentation before creting anything custom.
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
         integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
         crossorigin="anonymous"></script>
-<script>
-
-</script>
+        
+    <script>
+        const deleteBtn = (a) => {
+            a.remove()
+        }
+        console.log('gg')
+        </script>
 </body>
 
 </html>
