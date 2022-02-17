@@ -23,6 +23,72 @@ Make sure you check the documentation before creting anything custom.
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <style>
         /* PREVIOUS CODE */
+
+        .jumbotron {
+            animation: fadein 2s;
+        }
+        @keyframes fadein {
+            from { opacity: 0}
+            to   { opacity: 1}
+        }
+
+
+        .card{
+            position: relative;
+            background-image: linear-gradient(40deg, rgb(150, 17, 17), rgb(221, 221, 221));
+            border: none;
+        }
+
+        .badge {
+            display: inline-block;
+            position: absolute;
+            background-color: aqua;
+            padding: 2px 4px;
+            font-size: 16px;
+            width: 5rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            border-top-left-radius: 0px;
+            border-bottom-left-radius: 0px;
+            
+        }
+
+        span::before {
+            content: "";
+            animation: animate infinite 3s;
+            padding-left: 10px;
+            color: #fff;
+            font-size: 48px;
+        }
+  
+        @keyframes animate {
+  
+            0% {
+                content: "I";
+            }
+  
+            50% {
+                content: "LOVE";
+            }
+  
+            75% {
+                content: "MOZART";
+            }
+        }
+
+        .btn {
+            animation: changeColor 2s;
+        }
+
+        @keyframes changeColor {
+            from {background-color: aqua;}
+            to {background-color: white;}
+        }
+
+
     </style>
 </head>
 
@@ -32,15 +98,49 @@ Make sure you check the documentation before creting anything custom.
         Create a Jumbotron section with a quick explanation / image of the website.
         Make it appear with a fade-in animation effect when the page loads.
     -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Fluid jumbotron</h1>
+            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+        </div>
+    </div>
 
     <!-- EXERCISE 2
         Use a Bootstrap Card to contain every album in the favorite list you previously created.
         Use the elements of a card bootstrap provides you with to display nicely the album informations such as: album title, artist, year, etc..
     -->
-
-    <!-- EXERCISE 3
+        <!-- EXERCISE 3
         For every album in the favorite list, attach a badge on the top-left corner of the album with the genre of the music
     -->
+
+<div class="d-flex w-100 justify-content-center">
+    <div class="card ml-5 " style="width: 18rem;">
+        <div class="badge">Classical</div class="badge">
+        <img src="https://static.qobuz.com/images/covers/62/01/8030615040162_600.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+
+            <h5 class="card-title"><span></span></h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+        </div>
+        <div class="card-footer">
+            <div class="btn btn-warning w-100">Play</div>
+        </div>
+    </div>
+    <div class="card ml-5" style="width: 18rem;">
+        <img src="https://static.qobuz.com/images/covers/62/01/8030615040162_600.jpg" class="card-img-top" alt="...">
+        <div class="badge">Classical</div class="badge">
+        <div class="card-body">
+            <h5 class="card-title"><span></span></h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+        </div>
+        <div class="card-footer">
+            <div class="btn btn-warning w-100">Play</div>
+        </div>
+    </div>
+
+</div>
 
     <!-- EXERCISE 4
         Create a new section with an album tracklist inside a Bootstrap table.
@@ -49,6 +149,48 @@ Make sure you check the documentation before creting anything custom.
         There should be a column for the track order number, one for the title and one for the track duration.
         (If you want, you can also add extra columns)
     -->
+
+    <section class="my-5 w-75 mx-auto d-flex flex-column justify-content-center">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Duration</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mozart</td>
+                    <td>7:35</td>
+    
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Mozart</td>
+                    <td>5:40</td>
+    
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Mozart</td>
+                    <td>9:18</td>
+    
+                </tr>
+            </tbody>
+        </table>
+        <button type="button" class="addBtn btn btn-dark p-4 m-auto" data-bs-toggle="modal"
+            data-bs-target="#addTrack">Explore
+            all
+            musics</button>
+    
+    
+        </div>
+        </div>
+        </div>
+    </section>
 
     <!-- EXERCISE 5
         Add a DELETE bootstrap button at the end of each row of the tracklist. 
@@ -104,6 +246,9 @@ Make sure you check the documentation before creting anything custom.
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
         integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
         crossorigin="anonymous"></script>
+<script>
+
+</script>
 </body>
 
 </html>
